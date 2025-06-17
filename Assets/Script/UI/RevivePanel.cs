@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class RevivePanel : MonoBehaviour
 {
-    public Button AdButton;
-    public Button CloseButton;
+    public Button GiveButton;
+    public Button ADButton;
     public GameObject Coin;
     public GameObject AD;
     private bool IsCoin;
     void Start()
     {
-        AdButton.onClick.AddListener(()=> {
+        ADButton.onClick.AddListener(()=> {
             if (IsCoin)
             {
                 BlockManager.Instance.SubScore(100);
@@ -32,7 +32,7 @@ public class RevivePanel : MonoBehaviour
             }
         });
 
-        CloseButton.onClick.AddListener(()=> {
+        GiveButton.onClick.AddListener(()=> {
             BlockManager.Instance.ShowOrHidePanel(PanelType.RevivePanel, false);
             BlockManager.Instance.ShowOrHidePanel(PanelType.GameOverPanel, true);
         });
